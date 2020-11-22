@@ -61,8 +61,6 @@ bool decodeCoordinates(char a, char b, int *row, int *col) {
         return false;
     }
 
-    printf("Decoded %c%c to %d %d\n", a, b, rowOut, colOut);
-
     *row = rowOut;
     *col = colOut;
     return true;
@@ -129,8 +127,6 @@ void doComputerTurn() {
         int row = rand() % 3;
         int col = rand() % 3;
 
-        printf("Computer trying for %d, %d\n", row, col);
-
         if (board[row][col] == Empty) {
             board[row][col] = Computer;
             return;
@@ -148,7 +144,7 @@ void doHumanTurn() {
             board[playerRow][playerCol] = Human;
             return;
         } else {
-            printf("That space is taken!\n");
+            printf("That space is taken! Choose another space\n");
         }
     }
 }
